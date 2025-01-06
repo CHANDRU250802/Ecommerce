@@ -4,14 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce Home</title>
-    <!-- Link to the external CSS file -->
+    <!-- External CSS -->
     <link href="styles.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Inline CSS for the logo size adjustment */
+        /* Logo Styling */
         .navbar-brand img.logo {
-            max-height: 40px; /* Adjust the height as needed */
-            width: auto; /* Maintain aspect ratio */
+            max-height: 40px;
+            width: auto;
+        }
+
+        /* Card Styling */
+        .product-card {
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            height: 200px;
+            object-fit: contain;
+            background-color: #f8f9fa;
+            padding: 15px;
+        }
+
+        .product-card .card-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .product-card .card-text {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .product-card .btn {
+            font-size: 14px;
+            padding: 8px 16px;
         }
     </style>
 </head>
@@ -20,7 +56,6 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <!-- Adjust the path to your local image -->
                 <img src="./asserts/logo.jpg" alt="Logo" class="logo">
             </a>
             <form class="d-flex" role="search">
@@ -30,107 +65,113 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Product Grid -->
     <div class="container mt-4">
         <div class="row">
-            <!-- Example Product -->
-            <div class="col-md-4 mb-4">
+            <!-- Example Product Cards -->
+            <div class="col-md-3 mb-4">
                 <div class="card product-card">
-                    <img src="./asserts/iPhone_15.webp" class="card-img-top product-img" alt="Product Image">
+                    <img src="./asserts/iPhone_15.webp" class="card-img-top" alt="iPhone 15">
                     <div class="card-body">
-                        <h5 class="card-title product-title">I PHONE 15</h5>
-                        <p class="card-text product-description">Varient 256 gb</p>
-                        <a href="#" class="btn btn-primary product-btn">View Details</a>
+                        <h5 class="card-title">iPhone 15</h5>
+                        <p class="card-text">Variant 256 GB</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
                 <div class="card product-card">
-                    <img src="./asserts/Google-Pixel-9-Pro.png" class="card-img-top product-img" alt="Product Image">
+                    <img src="./asserts/Google-Pixel-9-Pro.png" class="card-img-top" alt="Google Pixel 9 Pro">
                     <div class="card-body">
-                        <h5 class="card-title product-title">I PHONE 15</h5>
-                        <p class="card-text product-description">Varient 256 gb</p>
-                        <a href="#" class="btn btn-primary product-btn">View Details</a>
+                        <h5 class="card-title">Google Pixel 9 Pro</h5>
+                        <p class="card-text">Variant 256 GB</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
                 <div class="card product-card">
-                    <img src="./asserts/oneplus-12.avif" class="card-img-top product-img" alt="Product Image">
+                    <img src="./asserts/oneplus-12.avif" class="card-img-top" alt="OnePlus 12">
                     <div class="card-body">
-                        <h5 class="card-title product-title">I PHONE 15</h5>
-                        <p class="card-text product-description">Varient 256 gb</p>
-                        <a href="#" class="btn btn-primary product-btn">View Details</a>
+                        <h5 class="card-title">OnePlus 12</h5>
+                        <p class="card-text">Variant 512 GB</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
                 <div class="card product-card">
-                    <img src="./asserts/s24.jpg" class="card-img-top product-img" alt="Product Image">
+                    <img src="./asserts/s24.jpg" class="card-img-top" alt="Samsung Galaxy S24">
                     <div class="card-body">
-                        <h5 class="card-title product-title">I PHONE 15</h5>
-                        <p class="card-text product-description">Varient 256 gb</p>
-                        <a href="#" class="btn btn-primary product-btn">View Details</a>
+                        <h5 class="card-title">Samsung Galaxy S24</h5>
+                        <p class="card-text">Variant 128 GB</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
+
+            <!-- Additional Products (Remaining Products) -->
+
+            <div class="col-md-3 mb-4">
                 <div class="card product-card">
-                    <img src="./asserts/opporeno13Pro.webp" class="card-img-top product-img" alt="Product Image">
+                    <img src="./asserts/opporeno13Pro.webp" class="card-img-top" alt="OPPO Reno 13 Pro">
                     <div class="card-body">
-                        <h5 class="card-title product-title">I PHONE 15</h5>
-                        <p class="card-text product-description">Varient 256 gb</p>
-                        <a href="#" class="btn btn-primary product-btn">View Details</a>
+                        <h5 class="card-title">OPPO Reno 13 Pro</h5>
+                        <p class="card-text">Variant 256 GB</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
                 <div class="card product-card">
-                    <img src="./asserts/Vivo-Y300-5G.jpg" class="card-img-top product-img" alt="Product Image">
+                    <img src="./asserts/Vivo-Y300-5G.jpg" class="card-img-top" alt="Vivo Y300 5G">
                     <div class="card-body">
-                        <h5 class="card-title product-title">I PHONE 15</h5>
-                        <p class="card-text product-description">Varient 256 gb</p>
-                        <a href="#" class="btn btn-primary product-btn">View Details</a>
+                        <h5 class="card-title">Vivo Y300 5G</h5>
+                        <p class="card-text">Variant 128 GB</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
                 <div class="card product-card">
-                    <img src="./asserts/OPPO_F27_Pro+_5G.jpg" class="card-img-top product-img" alt="Product Image">
+                    <img src="./asserts/OPPO_F27_Pro+_5G.jpg" class="card-img-top" alt="OPPO F27 Pro+ 5G">
                     <div class="card-body">
-                        <h5 class="card-title product-title">I PHONE 15</h5>
-                        <p class="card-text product-description">Varient 256 gb</p>
-                        <a href="#" class="btn btn-primary product-btn">View Details</a>
+                        <h5 class="card-title">OPPO F27 Pro+ 5G</h5>
+                        <p class="card-text">Variant 128 GB</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
                 <div class="card product-card">
-                    <img src="./asserts/in-galaxy-a35-5g.avif" class="card-img-top product-img" alt="Product Image">
+                    <img src="./asserts/in-galaxy-a35-5g.avif" class="card-img-top" alt="Infinix Galaxy A35 5G">
                     <div class="card-body">
-                        <h5 class="card-title product-title">I PHONE 15</h5>
-                        <p class="card-text product-description">Varient 256 gb</p>
-                        <a href="#" class="btn btn-primary product-btn">View Details</a>
+                        <h5 class="card-title">Infinix Galaxy A35 5G</h5>
+                        <p class="card-text">Variant 128 GB</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
+
+            <!-- Additional Products Continued -->
+
+            <div class="col-md-3 mb-4">
                 <div class="card product-card">
-                    <img src="./asserts/81dT7CUY6GL.jpg" class="card-img-top product-img" alt="Product Image">
+                    <img src="./asserts/techno pova.jpg" class="card-img-top" alt="Techno Pova">
                     <div class="card-body">
-                        <h5 class="card-title product-title">I PHONE 15</h5>
-                        <p class="card-text product-description">Varient 256 gb</p>
-                        <a href="#" class="btn btn-primary product-btn">View Details</a>
+                        <h5 class="card-title">Techno Pova</h5>
+                        <p class="card-text">Variant 128 GB</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
                 <div class="card product-card">
-                    <img src="./asserts/techno pova.jpg" class="card-img-top product-img" alt="Product Image">
+                    <img src="./asserts/81dT7CUY6GL.jpg" class="card-img-top" alt="Techno Pova">
                     <div class="card-body">
-                        <h5 class="card-title product-title">I PHONE 15</h5>
-                        <p class="card-text product-description">Varient 256 gb</p>
-                        <a href="#" class="btn btn-primary product-btn">View Details</a>
+                        <h5 class="card-title">iPhone 15 Pro</h5>
+                        <p class="card-text">Variant 256 GB</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
