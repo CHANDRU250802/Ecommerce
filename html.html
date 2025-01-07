@@ -213,6 +213,28 @@
                 document.getElementById('searchButton').click(); 
             }
         });
+
+        document.querySelectorAll('.btn-primary').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const productPages = [
+            './product/iphone_15.html',
+            './product/google_pixel_9_pro.html',
+            './product/oneplus_12.html',
+            './product/samsung_galaxy-s24.html',
+            './product/oppo_reno_13_pro.html',
+            './product/vivo_y300_5g.html',
+            './product/oppo_f27_pro_5g.html',
+            './product/infinix_galaxy_a35_5g.html',
+            './product/techno_pova.html',
+            './product/iphone_15_pro.html',
+            './product/reno_8_pro.html',
+            './product/pixel_8_pro.html',
+
+        ];
+        window.location.href = productPages[index];
+    });
+});
     </script>
+    
 </body>
 </html>
