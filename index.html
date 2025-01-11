@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./asserts/logo.jpg">
     
+
 </head>
 <body>
     
@@ -17,10 +18,19 @@
             <a class="navbar-brand" href="./">
                 <img src="./asserts/logo.jpg" alt="Logo" class="logo">
             </a>
+           
             <form class="d-flex" role="search">
                 <input id="searchInput" class="form-control me-2 search-input" type="search" placeholder="Search products..." aria-label="Search">
                 <button id="searchButton" class="btn btn-outline-success search-btn" type="button">Search</button>
             </form>
+            <div class="filter-options ms-3">
+                <select id="variantFilter" class="form-select">
+                    <option value="">All Variants</option>
+                    <option value="128 GB">128 GB</option>
+                    <option value="256 GB">256 GB</option>
+                    <option value="512 GB">512 GB</option>
+                </select>
+            </div>
         </div>
     </nav>
 
@@ -43,7 +53,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Google Pixel 9 Pro</h5>
                         <p class="card-text">Variant 256 GB</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                        <a href="./product/google_pixel_9_pro.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +63,7 @@
                     <div class="card-body">
                         <h5 class="card-title">OnePlus 12</h5>
                         <p class="card-text">Variant 512 GB</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                        <a href="./product/oneplus_12.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -63,7 +73,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Samsung Galaxy S24</h5>
                         <p class="card-text">Variant 128 GB</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                        <a href="./product/samsung_galaxy-s24.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -73,7 +83,7 @@
                     <div class="card-body">
                         <h5 class="card-title">OPPO Reno 13 Pro</h5>
                         <p class="card-text">Variant 256 GB</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                        <a href="./product/oppo_reno_13_pro.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -83,7 +93,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Vivo Y300 5G</h5>
                         <p class="card-text">Variant 128 GB</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                        <a href="./product/vivo_y300_5g.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -93,7 +103,7 @@
                     <div class="card-body">
                         <h5 class="card-title">OPPO F27 Pro+ 5G</h5>
                         <p class="card-text">Variant 128 GB</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                        <a href="./product/oppo_f27_pro_5g.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -103,7 +113,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Infinix Galaxy A35 5G</h5>
                         <p class="card-text">Variant 128 GB</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                        <a href="./product/infinix_galaxy_a35_5g.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -113,7 +123,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Techno Pova</h5>
                         <p class="card-text">Variant 128 GB</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                        <a href="./product/techno_pova.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -123,7 +133,7 @@
                     <div class="card-body">
                         <h5 class="card-title">iPhone 15 Pro</h5>
                         <p class="card-text">Variant 256 GB</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                        <a href="./product/iphone_15_pro.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -133,7 +143,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Reno 8 Pro</h5>
                         <p class="card-text">Variant 256 GB</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                        <a href="./product/reno_8_pro.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -143,7 +153,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Pixel 8 Pro</h5>
                         <p class="card-text">Variant 256 GB</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                        <a href="./product/pixel_8_pro.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -151,53 +161,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        
-        document.getElementById('searchButton').addEventListener('click', function() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const products = document.querySelectorAll('.showOrHideCard');
-
-            products.forEach(product => {
-                const productName = product.querySelector('.card-title').textContent.toLowerCase();
-                if (!searchTerm || productName.includes(searchTerm)) {
-                    product.style.display = 'block'; 
-                } else {
-                    product.style.display = 'none'; 
-                }
-            });
-        });
-
-       
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault(); 
-                document.getElementById('searchButton').click(); 
-            }
-        });
-
-      /*
-      document.querySelectorAll('.btn-primary').forEach((button, index) => {
-    button.addEventListener('click', () => {
-        const productPages = [
-            './product/iphone_15.html',
-            './product/google_pixel_9_pro.html',
-            './product/oneplus_12.html',
-            './product/samsung_galaxy-s24.html',
-            './product/oppo_reno_13_pro.html',
-            './product/vivo_y300_5g.html',
-            './product/oppo_f27_pro_5g.html',
-            './product/infinix_galaxy_a35_5g.html',
-            './product/techno_pova.html',
-            './product/iphone_15_pro.html',
-            './product/reno_8_pro.html',
-            './product/pixel_8_pro.html',
-
-        ];
-        window.location.href = productPages[index];
-    });
-});
-      */  
-    </script>
+    <script src ="javascript.js"></script>
     
 </body>
 </html>
