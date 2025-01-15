@@ -1,37 +1,35 @@
 function filterProducts() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    const selectedVariant = document.getElementById('variantFilter').value.toLowerCase(); 
-
+    const selectedVariant = document.getElementById('variantFilter').value.toLowerCase();
+    const errorMessage = document.getElementById('errorMessage');
     const products = document.querySelectorAll('.showOrHideCard');
 
-    if (!searchTerm && (!selectedVariant || selectedVariant === 'all')) {
-        alert('Please enter a search term or select a product variant.');
-        return; 
-    }
+    
+   
+   if (!searchTerm && (!selectedVariant || selectedVariant === 'all')) {
+    errorMessage.style.display = 'block';
+} else {
+    errorMessage.style.display = 'none';
+}
 
-    products.forEach(product => {
-        const productName = product.querySelector('.card-title').textContent.toLowerCase();
-        const productVariant = product.querySelector('.card-text').textContent.toLowerCase(); 
 
-        console.log(`Product Name: ${productName}, Product Variant: ${productVariant}`);
+products.forEach(product => {
+    const productName = product.querySelector('.card-title').textContent.toLowerCase();
+    const productVariant = product.querySelector('.card-text').textContent.toLowerCase();
 
-       
-        const matchesSearch = !searchTerm || productName.includes(searchTerm);
-        const matchesVariant = !selectedVariant || selectedVariant === 'all' || productVariant.includes(selectedVariant);
+    const matchesSearch = !searchTerm || productName.includes(searchTerm);
+    const matchesVariant = !selectedVariant || productVariant.includes(selectedVariant);
 
-        
-        if (matchesSearch && matchesVariant) {
-            product.style.display = 'block';
-        } else {
-            product.style.display = 'none';
-        }
-    });
+    
+    product.style.display = (matchesSearch && matchesVariant) ? 'block' : 'none';
+});
 }
 
 document.addEventListener('DOMContentLoaded', function () {
     const searchButton = document.getElementById('searchButton');
     const searchInput = document.getElementById('searchInput');
     const variantFilter = document.getElementById('variantFilter');
+    const errorMessage = document.getElementById('errorMessage');
 
     searchButton.addEventListener('click', function () {
         filterProducts();
@@ -45,6 +43,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     variantFilter.addEventListener('change', function () {
-        filterProducts();
+        const selectedVariant = variantFilter.value.toLowerCase();
+
+        // If 'All Variants' is selected, we should not filter products and clear any errors
+        if (selectedVariant === 'all') {
+            errorMessage.style.display = 'none';
+            filterProducts();
+        } else {
+            // Otherwise, filter the products based on search term and selected variant
+            filterProducts();
+        }
     });
 });
