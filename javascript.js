@@ -55,3 +55,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelector('.slides');
+    const slideCount = document.querySelectorAll('.slides img').length;
+    const slideWidth = 500; // Width of each slide
+    let index = 0;
+
+    function runSlider() {
+        index++;
+        if (index >= slideCount) {
+            index = 0;
+        }
+        slides.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+    // Run slider every 2 seconds
+    setInterval(runSlider, 2000);
+});
