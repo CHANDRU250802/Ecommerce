@@ -1,11 +1,11 @@
 var globalErrorMessage = false;
 var isVariantSelection = false;
 
-function showErrorMessage(){
+function showErrorMessage() {
     const errorMessage = document.getElementById('errorMessage');
-    if(globalErrorMessage){
+    if (globalErrorMessage) {
         errorMessage.style.display = 'block';
-    }else{
+    } else {
         errorMessage.style.display = 'none';
     }
 }
@@ -15,17 +15,12 @@ function filterProducts(isVariantSelection) {
     const selectedVariant = document.getElementById('variantFilter').value.toLowerCase();
     const products = document.querySelectorAll('.showOrHideCard');
 
-   if (!searchTerm && !isVariantSelection) {
-    globalErrorMessage = true;
-    } else if (!searchTerm && isVariantSelection){
+    if (!searchTerm && !isVariantSelection) {
+        globalErrorMessage = true;
+    } else {
         globalErrorMessage = false;
-    } else if (searchTerm && !isVariantSelection){
-        globalErrorMessage = false;
-    }else{
-        globalErrorMessage = false;
-    }   
+    }
 
-    
     products.forEach(product => {
         const productName = product.querySelector('.card-title').textContent.toLowerCase();
         const productVariant = product.querySelector('.card-text').textContent.toLowerCase();
@@ -41,8 +36,7 @@ function filterProducts(isVariantSelection) {
     let allNone = true;
 
     products.forEach(product => {
-        const styleBlock = product.style.display;
-        if (styleBlock !== 'none') {
+        if (product.style.display !== 'none') {
             allNone = false;
         }
     });
@@ -58,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchButton = document.getElementById('searchButton');
     const searchInput = document.getElementById('searchInput');
     const variantFilter = document.getElementById('variantFilter');
-    const errorMessage = document.getElementById('errorMessage');
 
     searchButton.addEventListener('click', function () {
         isVariantSelection = false;
@@ -75,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     variantFilter.addEventListener('change', function () {
         isVariantSelection = true;
-        filterProducts(isVariantSelection);   
+        filterProducts(isVariantSelection);
     });
 });
 
@@ -94,4 +87,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     setInterval(runSlider, 2000);
+});
+
+
+const tuneIcon = document.querySelector('.filter-options .material-symbols-outlined');
+
+
+const variantFilter = document.getElementById('variantFilter');
+
+
+tuneIcon.addEventListener('click', () => {
+    
+    const currentDisplay = getComputedStyle(variantFilter).display;
+
+    if (currentDisplay === 'none') {
+        variantFilter.style.display = 'block'; 
+    } else {
+        variantFilter.style.display = 'none'; 
+    }
 });
