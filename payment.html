@@ -11,7 +11,7 @@
     <div class="container mt-5">
         <h2 class="text-center mb-4">Payment Options</h2>
         <form id="paymentForm">
-            <!-- Payment Method Selection -->
+            
             <div class="mb-4">
                 <label for="paymentMethod" class="form-label"><strong>Choose Payment Method:</strong></label>
                 <select id="paymentMethod" class="form-select">
@@ -22,12 +22,12 @@
                 </select>
             </div>
 
-            <!-- Cash on Delivery -->
+           
             <div id="codSection" class="payment-section">
                 <p>No additional details required for Cash on Delivery.</p>
             </div>
 
-            <!-- Card Payment -->
+            
             <div id="cardSection" class="payment-section" style="display: none;">
                 <div class="mb-3">
                     <label for="cardNumber" class="form-label">Card Number</label>
@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-            <!-- UPI Payment -->
+           
             <div id="upiSection" class="payment-section" style="display: none;">
                 <div class="mb-3">
                     <label for="upiId" class="form-label">UPI ID</label>
@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            <!-- EMI Plans -->
+            
             <div id="emiSection" class="payment-section" style="display: none;">
                 <div class="mb-3">
                     <label for="emiAmount" class="form-label">Enter Total Amount (INR):</label>
@@ -73,11 +73,11 @@
                 </div>
             </div>
 
-            <!-- Submit Button -->
+            
             <button type="submit" class="btn btn-primary w-100">Proceed to Pay</button>
         </form>
     </div>
 
-    <script src="script.js"></script>
+    <script src="payment.js"></script>
 </body>
 </html>
