@@ -17,45 +17,51 @@
                         <div class="mb-3">
                             <label for="companyName" class="form-label">Seller Company Name</label>
                             <input type="text" class="form-control" id="companyName" name="companyName" required>
+                            <small class="text-muted" id="companyNameHelp">Enter a valid company name</small>
                         </div>
 
                         
                         <div class="mb-3">
                             <label for="gst" class="form-label">Seller GST</label>
                             <input type="text" class="form-control" id="gst" name="gst" required>
+                            <small class="text-muted" id="GSTHelp">Enter a valid GST No</small>
                         </div>
 
                        
                         <div class="mb-3">
                             <label for="firstName" class="form-label">Seller First Name</label>
                             <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            <small class="text-muted" id="firstNameHelp">Enter a valid firstName </small>
                         </div>
 
                         
                         <div class="mb-3">
                             <label for="lastName" class="form-label">Seller Last Name</label>
                             <input type="text" class="form-control" id="lastName" name="lastName" required>
+                            <small class="text-muted" id="lastNameHelp">Enter a valid lastName </small>
                         </div>
 
                        
                         <div class="mb-3">
                             <label for="email" class="form-label">Seller Email ID</label>
                             <input type="email" class="form-control" id="email" name="email" required>
+                            <small class="text-muted" id="emailHelp">Enter a valid Email </small>
                         </div>
 
                         
                         <div class="mb-3">
                             <label for="phone" class="form-label">Seller Phone Number</label>
                             <input type="text" class="form-control" id="phone" name="phone" required>
+                            <small class="text-muted" id="phoneHelp">Enter a valid Phone no </small>
                         </div>
 
                       
                         <div class="mb-3">
                             <label class="form-label">Address</label>
                             <div class="mb-2">
-                                <select id="country" class="form-select" required>
+                                <select id="country" class="form-select" disabled>
                                     <option value="">Select Country</option>
-                                    <option value="India">India</option>
+                                    <option value="India" selected>India</option>
                                 </select>
                             </div>
                             <div class="mb-2">
@@ -91,7 +97,7 @@
                         </div>
 
                         
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" id="sellerFormSubmitBtn">Submit</button>
                     </form>
                 </div>
             </div>
