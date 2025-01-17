@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // Populate states dynamically for India
+  
     const statesIndia = ["Andhra Pradesh", "Karnataka", "Kerala", "Tamil Nadu", "Maharashtra"];
     const citiesTamilNadu = ["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli", "Salem"];
 
@@ -26,7 +26,7 @@ $(document).ready(function() {
         }
     });
 
-    // Form validation
+    
     $('#sellerForm').submit(function(e) {
         e.preventDefault();
 
@@ -40,7 +40,7 @@ $(document).ready(function() {
             element.after(`<div class="error-message text-danger">${message}</div>`);
         }
 
-        // Validate fields
+       
         if (!/^[A-Z ]+$/.test($('#companyName').val())) {
             showError($('#companyName'), 'Company name must be in uppercase.');
         }
@@ -85,7 +85,7 @@ $(document).ready(function() {
             showError($('#gstCertificate'), 'Only PDF or JPG files are allowed.');
         }
 
-        // Show alert
+        
         if (isValid) {
             alert('Seller has been successfully created.');
             $('#sellerForm')[0].reset();
