@@ -77,3 +77,29 @@
     width: 500px;
     height: 300px;
 }
+
+/* Align the right section (filter, cart, profile) */
+.navbar .d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adjust spacing between elements */
+}
+
+/* Adjust the spacing for filter dropdown */
+.filter-options select {
+    width: 150px; /* Adjust width as needed */
+}
+
+/* Adjust icon size for cart and profile */
+.Cart span,
+#authLinks span {
+    font-size: 28px; /* Adjust size as needed */
+    cursor: pointer;
+}
+
+/* Add some hover effect for better UI */
+.Cart span:hover,
+#authLinks span:hover,
+.filter-options span:hover {
+    color: #007bff; /* Bootstrap primary color */
+}

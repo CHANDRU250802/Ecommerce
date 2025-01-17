@@ -19,39 +19,47 @@
             <a class="navbar-brand" href="./">
                 <img src="./asserts/logo.jpg" alt="Logo" class="logo">
             </a>
-           
-            <form class="d-flex" role="search">
+    
+            <form class="d-flex me-auto" role="search">
                 <input id="searchInput" class="form-control me-2 search-input" type="search" placeholder="Search products..." aria-label="Search">
                 <button id="searchButton" class="btn btn-outline-success search-btn" type="button">
                     <span class="material-symbols-outlined">
-                       search
+                        search
                     </span>
                 </button>
-                
             </form>
-            <div class="filter-options ms-3 d-flex align-items-center">
-                <span class="material-symbols-outlined">
-                    filter_list
+    
+            <!-- Right-aligned Section -->
+            <div class="d-flex align-items-center">
+                <div class="filter-options d-flex align-items-center me-3">
+                    <span class="material-symbols-outlined">
+                        filter_list
                     </span>
-               
-                <i class="fas fa-filter me-2" aria-hidden="true"></i>
-                <select id="variantFilter" class="form-select">
-                    <option value="">All Variants</option>
-                    <option value="128 GB">128 GB</option>
-                    <option value="256 GB">256 GB</option>
-                    <option value="512 GB">512 GB</option>
-                </select>
-            </div>
-            <div id="authLinks" class="ms-auto">
-                <a href="profile.html" id="profileLink" class="d-flex align-items-center">
-                    <span class="material-symbols-outlined" style="font-size: 30px; margin-right: 8px;">
-                        person
+                    <select id="variantFilter" class="form-select ms-2">
+                        <option value="">All Variants</option>
+                        <option value="128 GB">128 GB</option>
+                        <option value="256 GB">256 GB</option>
+                        <option value="512 GB">512 GB</option>
+                    </select>
+                </div>
+                
+                <div class="Cart me-3">
+                    <span class="material-symbols-outlined">
+                        shopping_cart
                     </span>
-                </a>
+                </div>
+    
+                <div id="authLinks">
+                    <a href="profile.html" id="profileLink" class="d-flex align-items-center">
+                        <span class="material-symbols-outlined" style="font-size: 30px; margin-right: 8px;">
+                            person
+                        </span>
+                    </a>
+                </div>
             </div>
-        </div>
         </div>
     </nav>
+    
 
     <div class="slider">
         <div class="slides">
