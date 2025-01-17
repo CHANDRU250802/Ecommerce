@@ -1,22 +1,102 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Seller Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="payment.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="container mt-4 mb-4">
-        <div class="row mt-4">
-            <div class="col-md-8 offset-md-2 mb-4">
-                <div class="card product-card">
-                    
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card product-card p-4">
+                    <h4 class="card-title mb-4">Add Seller</h4>
+                    <form id="sellerForm">
+                        <!-- Seller Company Name -->
+                        <div class="mb-3">
+                            <label for="companyName" class="form-label">Seller Company Name</label>
+                            <input type="text" class="form-control" id="companyName" name="companyName" required>
+                        </div>
+
+                        <!-- Seller GST -->
+                        <div class="mb-3">
+                            <label for="gst" class="form-label">Seller GST</label>
+                            <input type="text" class="form-control" id="gst" name="gst" required>
+                        </div>
+
+                        <!-- Seller First Name -->
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">Seller First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                        </div>
+
+                        <!-- Seller Last Name -->
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Seller Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                        </div>
+
+                        <!-- Seller Email ID -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Seller Email ID</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+
+                        <!-- Seller Phone Number -->
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Seller Phone Number</label>
+                            <input type="text" class="form-control" id="phone" name="phone" required>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <div class="mb-2">
+                                <select id="country" class="form-select" required>
+                                    <option value="">Select Country</option>
+                                    <option value="India">India</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <select id="state" class="form-select" required>
+                                    <option value="">Select State</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <select id="city" class="form-select" required>
+                                    <option value="">Select City</option>
+                                </select>
+                            </div>
+                            <input type="text" class="form-control mb-2" id="street" placeholder="Street" required>
+                            <input type="text" class="form-control mb-2" id="flat" placeholder="Door/Flat #" required>
+                            <input type="text" class="form-control" id="pin" placeholder="Pin Code" required>
+                        </div>
+
+                        <!-- Seller Category -->
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Seller Category</label>
+                            <select id="category" class="form-select" required>
+                                <option value="">Select Category</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Mobile Accessories">Mobile Accessories</option>
+                                <option value="Grocery">Grocery</option>
+                            </select>
+                        </div>
+
+                        <!-- Upload GST Certificate -->
+                        <div class="mb-3">
+                            <label for="gstCertificate" class="form-label">Upload GST Certificate</label>
+                            <input type="file" class="form-control" id="gstCertificate" accept=".pdf, .jpg" required>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    
-</body>
-</html>
+
+    <script src="./seller.js"></script>
+    </body>
