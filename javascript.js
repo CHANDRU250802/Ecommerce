@@ -1,28 +1,57 @@
-function filterProducts() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    const selectedVariant = document.getElementById('variantFilter').value.toLowerCase();
-    const errorMessage = document.getElementById('errorMessage');
-    const products = document.querySelectorAll('.showOrHideCard');
+var globalErrorMessage = false;
+var isVariantSelection = false;
 
-    
-   
-   if (!searchTerm && (!selectedVariant || selectedVariant === 'all')) {
-    errorMessage.style.display = 'block';
-} else {
-    errorMessage.style.display = 'none';
+function showErrorMessage(){
+    const errorMessage = document.getElementById('errorMessage');
+    if(globalErrorMessage){
+        errorMessage.style.display = 'block';
+    }else{
+        errorMessage.style.display = 'none';
+    }
 }
 
+function filterProducts(isVariantSelection) {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const selectedVariant = document.getElementById('variantFilter').value.toLowerCase();
+    const products = document.querySelectorAll('.showOrHideCard');
 
-products.forEach(product => {
-    const productName = product.querySelector('.card-title').textContent.toLowerCase();
-    const productVariant = product.querySelector('.card-text').textContent.toLowerCase();
-
-    const matchesSearch = !searchTerm || productName.includes(searchTerm);
-    const matchesVariant = !selectedVariant || productVariant.includes(selectedVariant);
+   if (!searchTerm && !isVariantSelection) {
+    globalErrorMessage = true;
+    } else if (!searchTerm && isVariantSelection){
+        globalErrorMessage = false;
+    } else if (searchTerm && !isVariantSelection){
+        globalErrorMessage = false;
+    }else{
+        globalErrorMessage = false;
+    }   
 
     
-    product.style.display = (matchesSearch && matchesVariant) ? 'block' : 'none';
-});
+    products.forEach(product => {
+        const productName = product.querySelector('.card-title').textContent.toLowerCase();
+        const productVariant = product.querySelector('.card-text').textContent.toLowerCase();
+
+        const matchesSearch = !searchTerm || productName.includes(searchTerm);
+        const matchesVariant = !selectedVariant || productVariant.includes(selectedVariant);
+
+        product.style.display = (matchesSearch && matchesVariant) ? 'block' : 'none';
+    });
+
+    showErrorMessage();
+
+    let allNone = true;
+
+    products.forEach(product => {
+        const styleBlock = product.style.display;
+        if (styleBlock !== 'none') {
+            allNone = false;
+        }
+    });
+
+    if (allNone) {
+        document.getElementById('noProductsMessage').style.display = 'block';
+    } else {
+        document.getElementById('noProductsMessage').style.display = 'none';
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -32,27 +61,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const errorMessage = document.getElementById('errorMessage');
 
     searchButton.addEventListener('click', function () {
-        filterProducts();
+        isVariantSelection = false;
+        filterProducts(isVariantSelection);
     });
 
     searchInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             e.preventDefault();
-            filterProducts();
+            isVariantSelection = false;
+            filterProducts(isVariantSelection);
         }
     });
 
     variantFilter.addEventListener('change', function () {
-        const selectedVariant = variantFilter.value.toLowerCase();
-
-        // If 'All Variants' is selected, we should not filter products and clear any errors
-        if (selectedVariant === 'all') {
-            errorMessage.style.display = 'none';
-            filterProducts();
-        } else {
-            // Otherwise, filter the products based on search term and selected variant
-            filterProducts();
-        }
+        isVariantSelection = true;
+        filterProducts(isVariantSelection);   
     });
 });
 
@@ -70,6 +93,5 @@ document.addEventListener('DOMContentLoaded', function () {
         slides.style.transform = `translateX(-${index * slideWidth}px)`;
     }
 
-    // Run slider every 2 seconds
     setInterval(runSlider, 2000);
 });
