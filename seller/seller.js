@@ -95,11 +95,61 @@ $(document).ready(function() {
             //
         }
         
+          // Validate Address
+          if ($('#state').val() === "") {
+            $('#state').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#state').removeClass('is-invalid').addClass('is-valid');
+        }
+
+        if ($('#city').val() === "") {
+            $('#city').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#city').removeClass('is-invalid').addClass('is-valid');
+        }
+
+        if ($('#street').val().trim() === "") {
+            $('#street').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#street').removeClass('is-invalid').addClass('is-valid');
+        }
+
+        if ($('#flat').val().trim() === "") {
+            $('#flat').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#flat').removeClass('is-invalid').addClass('is-valid');
+        }
+
+        if ($('#pin').val().trim() === "" || !/^\d{6}$/.test($('#pin').val().trim())) {
+            $('#pin').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#pin').removeClass('is-invalid').addClass('is-valid');
+        }
+
+        // Validate Category
+        if ($('#category').val() === "") {
+            $('#category').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#category').removeClass('is-invalid').addClass('is-valid');
+        }
+
+        // Final submission check
+        if (!isValid || $('.is-invalid').length > 0) {
+            alert('Please review the fields.');
+        } else {
+            submitForm();
+        }
+    });
 
        
 
-        submitForm();
-    });
+    
 
     function submitForm(){
         //if(isValid){
