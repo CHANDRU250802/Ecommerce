@@ -95,7 +95,6 @@ $(document).ready(function() {
             //
         }
         
-          // Validate Address
           if ($('#state').val() === "") {
             $('#state').addClass('is-invalid');
             isValid = false;
@@ -131,7 +130,6 @@ $(document).ready(function() {
             $('#pin').removeClass('is-invalid').addClass('is-valid');
         }
 
-        // Validate Category
         if ($('#category').val() === "") {
             $('#category').addClass('is-invalid');
             isValid = false;
@@ -139,7 +137,6 @@ $(document).ready(function() {
             $('#category').removeClass('is-invalid').addClass('is-valid');
         }
 
-        // Final submission check
         if (!isValid || $('.is-invalid').length > 0) {
             alert('Please review the fields.');
         } else {
