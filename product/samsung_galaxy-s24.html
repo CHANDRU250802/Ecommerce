@@ -3,72 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samsung Galaxy S24</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .product-details {
-            margin-bottom: 20px;
-        }
-        .specs, .offers, .buy-section {
-            margin-bottom: 20px;
-        }
-        .buy-button, .add-to-cart {
-            padding: 10px 20px;
-            background-color: #34a853;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .buy-button:hover, .add-to-cart:hover {
-            background-color: #28a745;
-        }
-        .back-link {
-            margin-top: 20px;
-            display: inline-block;
-            font-size: 16px;
-        }
-    </style>
+    <title>SAMSUNG S24</title>
+    <link href="./product.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Samsung Galaxy S24</h1>
-
-    <div class="product-details">
-        <p>The Samsung Galaxy S24 comes with the latest features for an unmatched smartphone experience. Explore its full specifications and offers below.</p>
+    <div class="container">
+        <div class="image-section">
+            <img id="mainImage" src="../asserts/s24.jpg" alt="s24">
+        </div>
+        <div class="info-section">
+            <h1>SAMSUNG GALAXY S24 ULTRA</h1>
+            <div class="price">
+                ₹99,999
+            </div>
+            <div class="offer">
+                Inclusive of all taxes
+            </div>
+            <div class="specs">
+                <span>EMI starts at ₹2,860. No Cost EMI available</span>
+                <span>Cashback up to ₹1,769.97</span>
+                <span>7 days Service Centre Replacement</span>
+            </div>
+            <div class="color-size-section">
+                <div>
+                    <strong>Colour:</strong> Arctic Dawn
+                </div>
+                <div class="options" id="colorOptions">
+                    <div class="option selected" data-color="arctic dawn">Arctic Dawn</div>
+                    <div class="option" data-color="black eclipse">Black Eclipse</div>
+                    <div class="option" data-color="midnight ocean">Midnight Ocean</div>
+                </div>
+                <div>
+                    <strong>Size:</strong> 128 GB
+                </div>
+                <div class="options" id="sizeOptions">
+                    <div class="option selected" data-size="128">128 GB</div>
+                    <div class="option" data-size="256">256 GB</div>
+                    <div class="option" data-size="512">512 GB</div>
+                </div>
+            </div>
+            <div class="buy-section">
+                <a href="#" class="cart-button">Add to cart</a>
+                <a href="../payment.html" class="buy-now-button">Buy Now</a>
+                
+            </div>
+        </div>
     </div>
 
-    <div class="specs">
-        <h2>Specifications:</h2>
-        <ul>
-            <li><strong>Display:</strong> 6.7-inch AMOLED, 120Hz refresh rate</li>
-            <li><strong>Processor:</strong> Qualcomm Snapdragon 8 Gen 2</li>
-            <li><strong>RAM:</strong> 12GB</li>
-            <li><strong>Storage:</strong> 256GB / 512GB</li>
-            <li><strong>Camera:</strong> 50MP primary, 12MP ultrawide, 48MP telephoto</li>
-            <li><strong>Battery:</strong> 5000mAh with fast charging support</li>
-            <li><strong>Operating System:</strong> Android 14</li>
-        </ul>
-    </div>
+    <script>
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+        const colorOptions = document.querySelectorAll('#colorOptions .option');
+        const sizeOptions = document.querySelectorAll('#sizeOptions .option');
 
-    <div class="offers">
-        <h2>Bank Offers:</h2>
-        <ul>
-            <li>10% cashback on purchases with selected bank cards</li>
-            <li>EMI options with 0% interest for 6 months</li>
-            <li>Free shipping for first-time buyers</li>
-        </ul>
-    </div>
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                mainImage.src = thumbnail.src;
+            });
+        });
 
-    <div class="buy-section">
-        <a href="../payment.html" class="buy-button">Buy Now</a>
-        <a href="#" class="add-to-cart">Add to Cart</a>
-    </div>
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelector('#colorOptions .selected').classList.remove('selected');
+                option.classList.add('selected');
+            });
+        });
 
-    <a href="../" class="back-link">Back to Home</a>
+        sizeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelector('#sizeOptions .selected').classList.remove('selected');
+                option.classList.add('selected');
+            });
+        });
+    </script>
 </body>
 </html>
