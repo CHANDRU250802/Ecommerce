@@ -5,7 +5,7 @@ $(document).ready(function() {
     $('#sellerFormSubmitBtn').on('click', function(e){
         e.preventDefault();
         
-        if($('#companyName').val() === ""){
+        if($('#companyName').val() === "" ){
             $('#companyName').addClass('is-invalid');
             $('#companyNameHelp').text('Company Name cannot be empty');
             $('#companyNameHelp').removeClass('text-muted').addClass('text-danger');
@@ -97,14 +97,14 @@ $(document).ready(function() {
         
           if ($('#state').val() === "") {
             $('#state').addClass('is-invalid');
-            isValid = false;
+            //isValid = false;
         } else {
             $('#state').removeClass('is-invalid').addClass('is-valid');
         }
 
         if ($('#city').val() === "") {
             $('#city').addClass('is-invalid');
-            isValid = false;
+           // isValid = false;
         } else {
             $('#city').removeClass('is-invalid').addClass('is-valid');
         }
@@ -118,21 +118,21 @@ $(document).ready(function() {
 
         if ($('#flat').val().trim() === "") {
             $('#flat').addClass('is-invalid');
-            isValid = false;
+           // isValid = false;
         } else {
             $('#flat').removeClass('is-invalid').addClass('is-valid');
         }
 
         if ($('#pin').val().trim() === "" || !/^\d{6}$/.test($('#pin').val().trim())) {
             $('#pin').addClass('is-invalid');
-            isValid = false;
+           // isValid = false;
         } else {
             $('#pin').removeClass('is-invalid').addClass('is-valid');
         }
 
         if ($('#category').val() === "") {
             $('#category').addClass('is-invalid');
-            isValid = false;
+            //isValid = false;
         } else {
             $('#category').removeClass('is-invalid').addClass('is-valid');
         }
@@ -142,17 +142,34 @@ $(document).ready(function() {
         //} else {
             submitForm();
         //}
-
-        $('#companyName').on('input', function(e){
-           e.preventDefault();
-            let name = $(this).val();
-            console.log(name.toUpperCase());
-        });
     });
 
-       
+    $('#companyName').on('input', function(e){
+        let name = $(this).val().toUpperCase();
+        $(this).val(name);
+     });   
 
+    $('#phone').on('input', function () {
+        var phone = $(this).val();
+        phone = phone.replace(/\D/g, '')
+        if (phone.length > 10) {
+            phone = phone.substring(0, 10);
+            $(this).val(phone);
+        }
+        else if (phone.length < 10 ){
+            $(this).val(phone);
+            ('#phone').removeClass('is-valid').addClass('is-invalid');
+            $('#phoneHelp').text('Enter a valid phone number');
+            $('#phoneHelp').removeClass('text-muted').removeClass('text-success').addClass('text-danger');
+        }else{
+            $(this).val(phone);
+            ('#phone').removeClass('is-invalid').addClass('is-valid');
+            $('#phoneHelp').text('Phone no validated');
+            $('#phoneHelp').removeClass('text-muted').removeClass('text-danger').addClass('text-success');
+        }
+        
     
+    });
 
     function submitForm(){
         //if(isValid){
@@ -175,9 +192,14 @@ $(document).ready(function() {
         var email = $('#email').val();
         var country = $('#country').val();
         var state = $('#state').val();
+        var city = $('#city').val();
+        var street = $('#street').val();
+        var flat = $('#flat').val();
+        var pin = $('#pin').val();
+        var category = $('#category').val();
         console.log(companyName);
         alert("The seller's company name is : " + companyName + "\n The seller's GST name is : " + GST + 
-            "\n The seller's First and Last name is : "  + firstName + " " + lastName +  " \n The seller's Phone number is : " + phone + "\n The seller's Email is : " + email + "\n The selles's country is : " + country + "\n The seller's state is : " + state);
+            "\n The seller's First and Last name is : "  + firstName + " " + lastName +  " \n The seller's Phone number is : " + phone + "\n The seller's Email is : " + email + "\n The seller's country is : " + country + "\n The seller's state is : " + state + "\n The seller's city is :" + city + "\n The seller's street is :" + street + "\n The seller's flat is :" + flat + "\n The seller's pin is :" + pin + "\n The seller's category is :" + category);
        }
 
     }
