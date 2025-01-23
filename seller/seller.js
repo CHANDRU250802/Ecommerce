@@ -137,11 +137,11 @@ $(document).ready(function() {
             $('#category').removeClass('is-invalid').addClass('is-valid');
         }
 
-        if (!isValid || $('.is-invalid').length > 0) {
-            alert('Please review the fields.');
-        } else {
+        //if (!isValid || $('.is-invalid').length > 0) {
+           // alert('Please review the fields.');
+        //} else {
             submitForm();
-        }
+        //}
     });
 
        
@@ -159,6 +159,7 @@ $(document).ready(function() {
 
        if($('.is-invalid').length > 0){
             alert('Please review the fields.');
+           return;
        }else{
         var companyName = $('#companyName').val();
         var GST = $('#gst').val();
