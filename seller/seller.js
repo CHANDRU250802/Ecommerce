@@ -168,9 +168,10 @@ $(document).ready(function() {
         var phone = $('#phone').val();
         var email = $('#email').val();
         var country = $('#country').val();
+        var state = $('#state').val();
         console.log(companyName);
         alert("The seller's company name is : " + companyName + "\n The seller's GST name is : " + GST + 
-            "\n The seller's First and Last name is : "  + firstName + " " + lastName +  " \n The seller's Phone number is : " + phone + "\n The seller's Email is : " + email + "\n The selles's country is : " + country);
+            "\n The seller's First and Last name is : "  + firstName + " " + lastName +  " \n The seller's Phone number is : " + phone + "\n The seller's Email is : " + email + "\n The selles's country is : " + country + "\n The seller's state is : " + state);
        }
 
     }
