@@ -145,7 +145,8 @@ $(document).ready(function() {
 
         $('#companyName').on('input', function(e){
            e.preventDefault();
-            console.log($(this).val().toUpperCase());
+            let name = $(this).val();
+            console.log(name.toUpperCase());
         });
     });
 
