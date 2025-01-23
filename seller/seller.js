@@ -142,6 +142,11 @@ $(document).ready(function() {
         //} else {
             submitForm();
         //}
+
+        $('#companyName').on('input', function(e){
+           e.preventDefault();
+            console.log($(this).val().upper());
+        });
     });
 
        
